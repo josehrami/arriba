@@ -124,6 +124,35 @@ test('storage: round-trips JSON and falls back on garbage', () => {
   localStorage.removeItem('arriba.__test');
 });
 
+async function validateDecks() {
+  for (const lang of ['en', 'es']) {
+    const deck = await (await fetch(`../decks/${lang}.json`)).json();
+    test(`deck ${lang}: 8 categories with required ids`, () => {
+      eq(deck.categories.map(c => c.id).sort(),
+         ['actions', 'animals', 'food', 'movies', 'music', 'people', 'places', 'sports']);
+    });
+    for (const cat of deck.categories) {
+      test(`deck ${lang}/${cat.id}: ≥90 words, ≥25 per difficulty, no dups, valid entries`, () => {
+        ok(cat.name && cat.emoji, 'name and emoji present');
+        ok(cat.words.length >= 90, `only ${cat.words.length} words`);
+        for (const d of [1, 2, 3]) {
+          const n = cat.words.filter(e => e.d === d).length;
+          ok(n >= 25, `difficulty ${d} has only ${n}`);
+        }
+        const seen = new Set();
+        for (const e of cat.words) {
+          ok(typeof e.w === 'string' && e.w.trim().length > 0 && e.w.length <= 30, `bad word ${JSON.stringify(e)}`);
+          ok([1, 2, 3].includes(e.d), `bad difficulty ${JSON.stringify(e)}`);
+          const k = e.w.toLowerCase();
+          ok(!seen.has(k), `duplicate ${e.w}`);
+          seen.add(k);
+        }
+      });
+    }
+  }
+}
+await validateDecks().catch((e) => { results.push('FAIL deck fetch — ' + e.message); });
+
 const failures = results.filter(r => r.startsWith('FAIL'));
 document.getElementById('out').textContent =
   results.join('\n') + `\n\n${failures.length === 0 ? 'ALL PASS' : failures.length + ' FAILURES'} (${results.length} tests)`;
