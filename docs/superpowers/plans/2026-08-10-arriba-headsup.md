@@ -43,7 +43,7 @@ README.md                  play + deploy instructions
 **Files:**
 - Create: `.claude/launch.json`, `index.html`, `styles.css`, `README.md`
 
-- [ ] **Step 1: Create `.claude/launch.json`**
+- [x] **Step 1: Create `.claude/launch.json`**
 
 ```json
 {
@@ -59,7 +59,7 @@ README.md                  play + deploy instructions
 }
 ```
 
-- [ ] **Step 2: Create `index.html`** (complete final shell — later tasks only add JS/decks/PWA files)
+- [x] **Step 2: Create `index.html`** (complete final shell — later tasks only add JS/decks/PWA files)
 
 ```html
 <!doctype html>
@@ -173,7 +173,7 @@ README.md                  play + deploy instructions
 </html>
 ```
 
-- [ ] **Step 3: Create `styles.css`** (complete)
+- [x] **Step 3: Create `styles.css`** (complete)
 
 ```css
 :root {
@@ -348,7 +348,7 @@ button.ghost { background: transparent; color: var(--muted); min-width: 0; }
 .boot-error { padding: 3rem 1.5rem; font-size: 1.2rem; text-align: center; }
 ```
 
-- [ ] **Step 4: Create `README.md`** (stub; finished in Task 9)
+- [x] **Step 4: Create `README.md`** (stub; finished in Task 9)
 
 ```markdown
 # ¡Arriba! — offline heads-up party game
@@ -358,12 +358,12 @@ Static PWA. No build step. Serve the folder over HTTP and open `index.html`.
 Local dev: `python3 -m http.server 8613` then http://localhost:8613/
 ```
 
-- [ ] **Step 5: Verify the server serves the shell**
+- [x] **Step 5: Verify the server serves the shell**
 
 Start preview (`preview_start` name `arriba`), navigate to `http://localhost:8613/`.
 Expected: dark screen with ¡ARRIBA! logo (no JS yet — buttons unlabeled, console 404 for js/app.js is fine at this stage).
 
-- [ ] **Step 6: Commit**
+- [x] **Step 6: Commit**
 
 ```bash
 git add -A && git commit -m "feat: app shell, styles, launch config"
@@ -377,7 +377,7 @@ git add -A && git commit -m "feat: app shell, styles, launch config"
 - Create: `test/tests.html` (harness + engine tests; more tests appended later)
 - Create: `js/engine.js`
 
-- [ ] **Step 1: Write the failing tests — create `test/tests.html`**
+- [x] **Step 1: Write the failing tests — create `test/tests.html`**
 
 ```html
 <!doctype html>
@@ -469,12 +469,12 @@ document.getElementById('out').textContent =
 </script>
 ```
 
-- [ ] **Step 2: Run tests to verify they fail**
+- [x] **Step 2: Run tests to verify they fail**
 
 Navigate Browser pane to `http://localhost:8613/test/tests.html`.
 Expected: page stuck on "running…" (module import of missing `../js/engine.js` fails — check console shows 404/import error).
 
-- [ ] **Step 3: Create `js/engine.js`**
+- [x] **Step 3: Create `js/engine.js`**
 
 ```js
 // Pure game logic — no DOM access.
@@ -540,12 +540,12 @@ export class Round {
 }
 ```
 
-- [ ] **Step 4: Run tests to verify they pass**
+- [x] **Step 4: Run tests to verify they pass**
 
 Reload `http://localhost:8613/test/tests.html`.
 Expected: `ALL PASS (10 tests)`.
 
-- [ ] **Step 5: Commit**
+- [x] **Step 5: Commit**
 
 ```bash
 git add -A && git commit -m "feat: game engine (filter, shuffle, no-repeat queue, Round) with browser tests"
@@ -561,7 +561,7 @@ git add -A && git commit -m "feat: game engine (filter, shuffle, no-repeat queue
 
 **Background for the engineer:** `deviceorientation` gives Euler angles (beta, gamma) that gimbal-flip near the vertical pose the game is played in. Instead of thresholding raw angles, convert to the gravity component along the screen normal: `gz = -cos(beta)·cos(gamma)` (degrees→radians first). `gz = +1` screen faces the floor (CORRECT), `-1` faces the ceiling (PASS), `≈0` vertical on the forehead (neutral). This is continuous through the flip and works in any landscape direction.
 
-- [ ] **Step 1: Add failing tilt tests to `test/tests.html`** — add this import under the engine import, and the tests before the `failures` line:
+- [x] **Step 1: Add failing tilt tests to `test/tests.html`** — add this import under the engine import, and the tests before the `failures` line:
 
 ```js
 import { faceDown, TiltDetector } from '../js/tilt.js';
@@ -598,11 +598,11 @@ test('TiltDetector: minIntervalMs suppresses rapid re-fire', () => {
 });
 ```
 
-- [ ] **Step 2: Run tests to verify the new ones fail**
+- [x] **Step 2: Run tests to verify the new ones fail**
 
 Reload tests page. Expected: import error (missing `../js/tilt.js`) — page stuck on "running…".
 
-- [ ] **Step 3: Create `js/tilt.js`**
+- [x] **Step 3: Create `js/tilt.js`**
 
 ```js
 const DEG = Math.PI / 180;
@@ -653,11 +653,11 @@ export async function requestTiltPermission() {
 }
 ```
 
-- [ ] **Step 4: Run tests to verify they pass**
+- [x] **Step 4: Run tests to verify they pass**
 
 Reload tests page. Expected: `ALL PASS (16 tests)`.
 
-- [ ] **Step 5: Commit**
+- [x] **Step 5: Commit**
 
 ```bash
 git add -A && git commit -m "feat: tilt detection via gravity z-component with neutral-zone state machine"
@@ -671,7 +671,7 @@ git add -A && git commit -m "feat: tilt detection via gravity z-component with n
 - Create: `js/storage.js`, `js/i18n.js`
 - Modify: `test/tests.html` (i18n parity + storage tests)
 
-- [ ] **Step 1: Create `js/storage.js`**
+- [x] **Step 1: Create `js/storage.js`**
 
 ```js
 const PREFIX = 'arriba.';
@@ -690,7 +690,7 @@ export function save(key, value) {
 }
 ```
 
-- [ ] **Step 2: Create `js/i18n.js`** (complete string tables)
+- [x] **Step 2: Create `js/i18n.js`** (complete string tables)
 
 ```js
 export const STRINGS = {
@@ -787,7 +787,7 @@ export function applyI18n(root = document) {
 }
 ```
 
-- [ ] **Step 3: Add tests to `test/tests.html`** (import + tests before the `failures` line)
+- [x] **Step 3: Add tests to `test/tests.html`** (import + tests before the `failures` line)
 
 ```js
 import { STRINGS } from '../js/i18n.js';
@@ -807,11 +807,11 @@ test('storage: round-trips JSON and falls back on garbage', () => {
 });
 ```
 
-- [ ] **Step 4: Run tests**
+- [x] **Step 4: Run tests**
 
 Reload tests page. Expected: `ALL PASS (18 tests)`.
 
-- [ ] **Step 5: Commit**
+- [x] **Step 5: Commit**
 
 ```bash
 git add -A && git commit -m "feat: storage wrapper and EN/ES i18n with parity test"
@@ -826,7 +826,7 @@ git add -A && git commit -m "feat: storage wrapper and EN/ES i18n with parity te
 
 WebAudio is untestable headlessly in a meaningful way; verified manually in Task 7's browser pass.
 
-- [ ] **Step 1: Create `js/audio.js`**
+- [x] **Step 1: Create `js/audio.js`**
 
 ```js
 let ctx = null;
@@ -866,7 +866,7 @@ export function vibrate(pattern) {
 }
 ```
 
-- [ ] **Step 2: Commit**
+- [x] **Step 2: Commit**
 
 ```bash
 git add -A && git commit -m "feat: WebAudio sound effects and vibration helper"
@@ -911,7 +911,7 @@ git add -A && git commit -m "feat: WebAudio sound effects and vibration helper"
 - Guessable-by-clues words only; keep words short enough to render big (≤ ~24 chars).
 - Difficulty rubric: d1 = instantly known to everyone (Dog, Pizza, Soccer); d2 = common but needs a beat (Flamingo, Guacamole, Cricket); d3 = niche/tricky (Axolotl, Mole de olla, Biathlon).
 
-- [ ] **Step 1: Add failing deck validation to `test/tests.html`** — wrap the trailing results-rendering lines in a function `render()`, then add:
+- [x] **Step 1: Add failing deck validation to `test/tests.html`** — wrap the trailing results-rendering lines in a function `render()`, then add:
 
 ```js
 async function validateDecks() {
@@ -945,23 +945,23 @@ await validateDecks().catch((e) => { results.push('FAIL deck fetch — ' + e.mes
 render();
 ```
 
-- [ ] **Step 2: Run tests to verify deck tests fail**
+- [x] **Step 2: Run tests to verify deck tests fail**
 
 Reload tests page. Expected: `FAIL deck fetch — …` plus prior 18 passes.
 
-- [ ] **Step 3: Author `decks/en.json`**
+- [x] **Step 3: Author `decks/en.json`**
 
 Full 8-category English deck meeting the requirements. ~95–100 words per category, mainstream international/US-centric content.
 
-- [ ] **Step 4: Author `decks/es.json`**
+- [x] **Step 4: Author `decks/es.json`**
 
 Full 8-category Spanish deck, Latin American cultural content (Mexican/Colombian/Argentine/Caribbean celebrities, dishes, places, música latina), everyday LatAm Spanish vocabulary.
 
-- [ ] **Step 5: Run tests to verify all pass**
+- [x] **Step 5: Run tests to verify all pass**
 
 Reload tests page. Expected: `ALL PASS (36 tests)` (18 prior + 2×(1+8) deck tests).
 
-- [ ] **Step 6: Commit**
+- [x] **Step 6: Commit**
 
 ```bash
 git add -A && git commit -m "feat: EN and ES-LatAm word decks with executable content validation"
@@ -974,7 +974,7 @@ git add -A && git commit -m "feat: EN and ES-LatAm word decks with executable co
 **Files:**
 - Create: `js/app.js`
 
-- [ ] **Step 1: Create `js/app.js`** (complete)
+- [x] **Step 1: Create `js/app.js`** (complete)
 
 ```js
 import { buildQueue, Round } from './engine.js';
@@ -1337,11 +1337,11 @@ boot().catch(() => {
 });
 ```
 
-- [ ] **Step 2: Verify the full loop in the Browser pane (tap mode)**
+- [x] **Step 2: Verify the full loop in the Browser pane (tap mode)**
 
 Navigate to `http://localhost:8613/`. Walk through: add 2 players → pick 2 categories, Medium, 30s → Start → countdown → click right/left halves to mark words → wait for time-up → recap shows list, click a row to flip it → Confirm → scoreboard shows updated totals → Next player loops to handoff. Switch language on Home and confirm all labels change.
 
-- [ ] **Step 3: Verify tilt state machine end-to-end with synthetic events** (Browser console via `javascript_tool`)
+- [x] **Step 3: Verify tilt state machine end-to-end with synthetic events** (Browser console via `javascript_tool`)
 
 ```js
 window.dispatchEvent(new DeviceOrientationEvent('deviceorientation', { beta: 175, gamma: 20 }))
@@ -1349,7 +1349,7 @@ window.dispatchEvent(new DeviceOrientationEvent('deviceorientation', { beta: 175
 
 (Only meaningful if `state.tiltOk` — on desktop it will be tap-mode; the unit tests already cover the state machine, so this step is best-effort.)
 
-- [ ] **Step 4: Commit**
+- [x] **Step 4: Commit**
 
 ```bash
 git add -A && git commit -m "feat: full game flow — screens, round loop, recap, scoreboard"
@@ -1363,7 +1363,7 @@ git add -A && git commit -m "feat: full game flow — screens, round loop, recap
 - Create: `tools/gen_icons.py`, `icons/icon.svg`, `manifest.webmanifest`, `sw.js`
 - Generated: `icons/icon-192.png`, `icons/icon-512.png`, `icons/apple-touch-icon.png`
 
-- [ ] **Step 1: Create `tools/gen_icons.py`** (stdlib only)
+- [x] **Step 1: Create `tools/gen_icons.py`** (stdlib only)
 
 ```python
 """Generate PNG app icons: coral background, white up-arrow. Stdlib only."""
@@ -1419,12 +1419,12 @@ make(180, 'icons/apple-touch-icon.png')
 print('icons written')
 ```
 
-- [ ] **Step 2: Run it**
+- [x] **Step 2: Run it**
 
 Run: `cd /Users/joseramirez/games/arriba && python3 tools/gen_icons.py`
 Expected: `icons written`; three PNGs exist. Read one with the Read tool to eyeball it.
 
-- [ ] **Step 3: Create `icons/icon.svg`**
+- [x] **Step 3: Create `icons/icon.svg`**
 
 ```svg
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
@@ -1433,7 +1433,7 @@ Expected: `icons written`; three PNGs exist. Read one with the Read tool to eyeb
 </svg>
 ```
 
-- [ ] **Step 4: Create `manifest.webmanifest`**
+- [x] **Step 4: Create `manifest.webmanifest`**
 
 ```json
 {
@@ -1453,7 +1453,7 @@ Expected: `icons written`; three PNGs exist. Read one with the Read tool to eyeb
 }
 ```
 
-- [ ] **Step 5: Create `sw.js`**
+- [x] **Step 5: Create `sw.js`**
 
 ```js
 // Bump the version to ship updates: a new cache is installed, old ones purged.
@@ -1499,14 +1499,14 @@ self.addEventListener('fetch', (e) => {
 });
 ```
 
-- [ ] **Step 6: Verify offline behavior in the Browser pane**
+- [x] **Step 6: Verify offline behavior in the Browser pane**
 
 Reload `http://localhost:8613/` twice (first load installs SW). Check via `javascript_tool`:
 `navigator.serviceWorker.controller !== null` → expect `true`, and
 `caches.keys()` → expect `['arriba-v1']`.
 Then stop the preview server (`preview_stop`), reload the page — the app must still load and play (decks cached). Restart the server afterward.
 
-- [ ] **Step 7: Commit**
+- [x] **Step 7: Commit**
 
 ```bash
 git add -A && git commit -m "feat: PWA — generated icons, manifest, precache service worker"
@@ -1519,7 +1519,7 @@ git add -A && git commit -m "feat: PWA — generated icons, manifest, precache s
 **Files:**
 - Modify: `README.md` (complete)
 
-- [ ] **Step 1: Full browser pass**
+- [x] **Step 1: Full browser pass**
 
 In the Browser pane, with a fresh profile state (clear `localStorage` via `javascript_tool`: `localStorage.clear(); location.reload()`):
 1. Home renders in EN (or ES if browser is es-*); toggle both languages.
@@ -1532,7 +1532,7 @@ In the Browser pane, with a fresh profile state (clear `localStorage` via `javas
 8. New game resets scores to 0, keeps players.
 9. tests.html still `ALL PASS`.
 
-- [ ] **Step 2: Complete `README.md`**
+- [x] **Step 2: Complete `README.md`**
 
 ```markdown
 # ¡Arriba! — free offline heads-up party game
@@ -1569,7 +1569,7 @@ page. `js/app.js` owns screens and the round loop. Decks live in
 validation tests.
 ```
 
-- [ ] **Step 3: Commit**
+- [x] **Step 3: Commit**
 
 ```bash
 git add -A && git commit -m "docs: complete README; full manual verification pass"
@@ -1581,19 +1581,19 @@ git add -A && git commit -m "docs: complete README; full manual verification pas
 
 The user approved GitHub Pages hosting in the design review. Requires a public repo (Pages is free only on public repos).
 
-- [ ] **Step 1: Preflight**
+- [x] **Step 1: Preflight**
 
 Run: `gh auth status`
 Expected: logged in. If not, stop and ask the user to run `gh auth login`.
 
-- [ ] **Step 2: Create repo and push**
+- [x] **Step 2: Create repo and push**
 
 ```bash
 cd /Users/joseramirez/games/arriba
 gh repo create arriba --public --source=. --remote=origin --push
 ```
 
-- [ ] **Step 3: Enable Pages from main branch root**
+- [x] **Step 3: Enable Pages from main branch root**
 
 ```bash
 gh api -X POST "repos/{owner}/arriba/pages" -f "source[branch]=main" -f "source[path]=/" \
@@ -1602,7 +1602,7 @@ gh api -X POST "repos/{owner}/arriba/pages" -f "source[branch]=main" -f "source[
 
 (`{owner}` resolves automatically in `gh api` paths when run inside the repo.)
 
-- [ ] **Step 4: Wait for the site to go live**
+- [x] **Step 4: Wait for the site to go live**
 
 ```bash
 until curl -sfo /dev/null "https://$(gh api user -q .login).github.io/arriba/"; do sleep 15; done; echo LIVE
@@ -1610,11 +1610,11 @@ until curl -sfo /dev/null "https://$(gh api user -q .login).github.io/arriba/"; 
 
 Expected: `LIVE` within ~2–5 minutes.
 
-- [ ] **Step 5: Verify the live site**
+- [x] **Step 5: Verify the live site**
 
 Open the live URL in the Browser pane: home screen renders, tests page passes, no console errors, manifest + SW load (subpath-relative URLs must all resolve).
 
-- [ ] **Step 6: Commit any fixes, push, and hand the URL to the user** with install instructions (Add to Home Screen → airplane mode).
+- [x] **Step 6: Commit any fixes, push, and hand the URL to the user** with install instructions (Add to Home Screen → airplane mode).
 
 ---
 
