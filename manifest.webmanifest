@@ -1,0 +1,15 @@
+{
+  "name": "Arriba",
+  "short_name": "Arriba",
+  "description": "Free offline heads-up party game — English y Español",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#12122b",
+  "theme_color": "#12122b",
+  "icons": [
+    { "src": "icons/icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
+    { "src": "icons/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" },
+    { "src": "icons/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+  ]
+}
