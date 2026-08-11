@@ -6,6 +6,8 @@
 <script type="module">
 import { filterWords, shuffle, buildQueue, Round } from '../js/engine.js';
 import { faceDown, TiltDetector } from '../js/tilt.js';
+import { STRINGS } from '../js/i18n.js';
+import { load, save } from '../js/storage.js';
 
 const results = [];
 function test(name, fn) {
@@ -109,6 +111,17 @@ test('TiltDetector: minIntervalMs suppresses rapid re-fire', () => {
   eq(d.update(0, -90, 100), null);        // re-armed but…
   eq(d.update(0, -30, 200), null);        // …within min interval
   eq(d.update(0, -30, 500), 'pass');
+});
+
+test('i18n: en and es have identical key sets', () => {
+  eq(Object.keys(STRINGS.en).sort(), Object.keys(STRINGS.es).sort());
+});
+test('storage: round-trips JSON and falls back on garbage', () => {
+  save('__test', { a: 1 });
+  eq(load('__test', null), { a: 1 });
+  localStorage.setItem('arriba.__test', '{not json');
+  eq(load('__test', 'fb'), 'fb');
+  localStorage.removeItem('arriba.__test');
 });
 
 const failures = results.filter(r => r.startsWith('FAIL'));
