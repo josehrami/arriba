@@ -5,6 +5,7 @@
 <pre id="out">running…</pre>
 <script type="module">
 import { filterWords, shuffle, buildQueue, Round } from '../js/engine.js';
+import { faceDown, TiltDetector } from '../js/tilt.js';
 
 const results = [];
 function test(name, fn) {
@@ -79,6 +80,35 @@ test('Round: actions after exhaustion are no-ops', () => {
   r.correct();
   r.finish();
   eq(r.results.length, 1);
+});
+
+function approx(a, b, msg = '') {
+  if (Math.abs(a - b) > 1e-6) throw new Error(`${msg} expected ~${b}, got ${a}`);
+}
+
+test('faceDown: flat screen-up reads -1', () => approx(faceDown(0, 0), -1));
+test('faceDown: vertical landscape reads 0', () => approx(faceDown(0, -90), 0));
+test('faceDown: tilted toward floor is strongly positive', () => {
+  ok(faceDown(175, 20) > 0.9, `got ${faceDown(175, 20)}`);
+});
+test('faceDown: tilted toward ceiling is negative', () => {
+  approx(faceDown(0, -30), -Math.cos(30 * Math.PI / 180));
+});
+
+test('TiltDetector: fires correct, then requires neutral before next fire', () => {
+  const d = new TiltDetector();
+  eq(d.update(0, -90, 0), null);          // neutral
+  eq(d.update(175, 20, 500), 'correct');  // tilt down
+  eq(d.update(175, 20, 1000), null);      // still down — not re-armed
+  eq(d.update(0, -90, 1500), null);       // back to neutral re-arms
+  eq(d.update(0, -30, 2000), 'pass');     // tilt up
+});
+test('TiltDetector: minIntervalMs suppresses rapid re-fire', () => {
+  const d = new TiltDetector({ minIntervalMs: 400 });
+  eq(d.update(175, 20, 0), 'correct');
+  eq(d.update(0, -90, 100), null);        // re-armed but…
+  eq(d.update(0, -30, 200), null);        // …within min interval
+  eq(d.update(0, -30, 500), 'pass');
 });
 
 const failures = results.filter(r => r.startsWith('FAIL'));
