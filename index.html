@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, user-scalable=no">
+<meta name="theme-color" content="#12122b">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" href="icons/icon.svg">
+<link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<title>Arriba</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<main>
+
+<section id="screen-home" class="menu">
+  <h1 class="logo">¡ARRIBA!</h1>
+  <p class="tagline" data-i18n="tagline"></p>
+  <div id="lang-toggle" class="seg">
+    <button data-lang="en">English</button>
+    <button data-lang="es">Español</button>
+  </div>
+  <button id="btn-play" class="primary big" data-i18n="play"></button>
+  <button id="btn-scores" class="secondary" data-i18n="scoreboard"></button>
+  <button id="btn-howto" class="secondary" data-i18n="howto"></button>
+</section>
+
+<section id="screen-players" class="menu" hidden>
+  <h2 data-i18n="players"></h2>
+  <ul id="player-list" class="rows"></ul>
+  <div class="row-input">
+    <input id="player-input" data-i18n-placeholder="playerPlaceholder" autocomplete="off" maxlength="20">
+    <button id="btn-add-player" class="secondary" data-i18n="addPlayer"></button>
+  </div>
+  <button id="btn-players-continue" class="primary" data-i18n="continue"></button>
+  <button id="btn-players-back" class="ghost" data-i18n="back"></button>
+</section>
+
+<section id="screen-setup" class="menu" hidden>
+  <h2 data-i18n="categories"></h2>
+  <div id="category-grid"></div>
+  <h2 data-i18n="difficulty"></h2>
+  <div id="difficulty-seg" class="seg">
+    <button data-d="0" data-i18n="dMixed"></button>
+    <button data-d="1" data-i18n="dEasy"></button>
+    <button data-d="2" data-i18n="dMedium"></button>
+    <button data-d="3" data-i18n="dHard"></button>
+  </div>
+  <h2 data-i18n="roundLength"></h2>
+  <div id="length-seg" class="seg">
+    <button data-s="30">30s</button>
+    <button data-s="60">60s</button>
+    <button data-s="90">90s</button>
+    <button data-s="120">120s</button>
+  </div>
+  <button id="btn-setup-continue" class="primary" data-i18n="continue"></button>
+  <button id="btn-setup-back" class="ghost" data-i18n="back"></button>
+</section>
+
+<section id="screen-handoff" class="menu" hidden>
+  <p data-i18n="passTo"></p>
+  <h2 id="handoff-name" class="huge"></h2>
+  <p data-i18n="holdUp"></p>
+  <button id="btn-start-round" class="primary big" data-i18n="start"></button>
+  <button id="btn-handoff-back" class="ghost" data-i18n="back"></button>
+</section>
+
+<section id="screen-countdown" class="landscape" hidden>
+  <p data-i18n="holdUp"></p>
+  <div id="countdown-num" class="giant">3</div>
+</section>
+
+<section id="screen-round" class="landscape" hidden>
+  <div id="round-timer"></div>
+  <div id="word"></div>
+  <p id="tap-hint" data-i18n="tapHint" hidden></p>
+  <div id="zone-pass" class="zone left"></div>
+  <div id="zone-correct" class="zone right"></div>
+  <div id="round-flash"></div>
+</section>
+
+<section id="screen-recap" class="menu" hidden>
+  <h2 data-i18n="recap"></h2>
+  <p id="recap-score" class="score-line"></p>
+  <p class="hint" data-i18n="tapToFix"></p>
+  <ul id="recap-list" class="rows"></ul>
+  <button id="btn-recap-confirm" class="primary" data-i18n="confirm"></button>
+</section>
+
+<section id="screen-scores" class="menu" hidden>
+  <h2 data-i18n="scoreboard"></h2>
+  <ul id="score-list" class="rows"></ul>
+  <button id="btn-next-player" class="primary" data-i18n="nextPlayer"></button>
+  <button id="btn-new-game" class="secondary" data-i18n="newGame"></button>
+  <button id="btn-scores-home" class="ghost" data-i18n="back"></button>
+</section>
+
+<section id="screen-howto" class="menu" hidden>
+  <h2 data-i18n="howto"></h2>
+  <p class="howto-text" data-i18n="howtoText"></p>
+  <button id="btn-howto-back" class="ghost" data-i18n="back"></button>
+</section>
+
+</main>
+<script type="module" src="js/app.js"></script>
+</body>
+</html>
