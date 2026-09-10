@@ -1,5 +1,5 @@
 // Bump the version to ship updates: a new cache is installed, old ones purged.
-const CACHE = 'arriba-v1';
+const CACHE = 'arriba-v2';
 
 const ASSETS = [
   './',

@@ -231,6 +231,64 @@
         { "w": "Guaracha", "d": 3 }, { "w": "Mambo", "d": 3 }, { "w": "Nueva Trova", "d": 3 }, { "w": "Chicha", "d": 3 },
         { "w": "Tropipop", "d": 3 }, { "w": "Chamamé", "d": 3 }, { "w": "Porro", "d": 3 }
       ]
+    },
+    {
+      "id": "band", "name": "Banda y Color Guard", "emoji": "🥁",
+      "words": [
+        { "w": "Banda de Guerra", "d": 1 }, { "w": "Desfile", "d": 1 }, { "w": "Bandera", "d": 1 }, { "w": "Uniforme", "d": 1 },
+        { "w": "Tambor", "d": 1 }, { "w": "Corneta", "d": 1 }, { "w": "Trompeta", "d": 1 }, { "w": "Tuba", "d": 1 },
+        { "w": "Trombón", "d": 1 }, { "w": "Platillos", "d": 1 }, { "w": "Silbato", "d": 1 }, { "w": "Marchar", "d": 1 },
+        { "w": "Escolta", "d": 1 }, { "w": "Medio Tiempo", "d": 1 }, { "w": "Cancha de Fútbol", "d": 1 }, { "w": "Estadio", "d": 1 },
+        { "w": "Trofeo", "d": 1 }, { "w": "Ensayo", "d": 1 }, { "w": "Partitura", "d": 1 }, { "w": "Atril", "d": 1 },
+        { "w": "Guantes", "d": 1 }, { "w": "Penacho", "d": 1 }, { "w": "Director de Banda", "d": 1 }, { "w": "Baquetas", "d": 1 },
+        { "w": "Redoblante", "d": 1 }, { "w": "Bombo", "d": 1 }, { "w": "Lira", "d": 1 }, { "w": "Campamento de Banda", "d": 1 },
+        { "w": "Porra", "d": 1 }, { "w": "Himno", "d": 1 }, { "w": "Marcha", "d": 1 },
+        { "w": "Sousafón", "d": 2 }, { "w": "Melófono", "d": 2 }, { "w": "Barítono", "d": 2 }, { "w": "Flautín", "d": 2 },
+        { "w": "Tenores", "d": 2 }, { "w": "Vibráfono", "d": 2 }, { "w": "Xilófono", "d": 2 }, { "w": "Sable", "d": 2 },
+        { "w": "Lanzamiento de Bandera", "d": 2 }, { "w": "Rutina", "d": 2 }, { "w": "Formación", "d": 2 }, { "w": "Paso Redoblado", "d": 2 },
+        { "w": "Firmes", "d": 2 }, { "w": "En Descanso", "d": 2 }, { "w": "Saludo", "d": 2 }, { "w": "Afinación", "d": 2 },
+        { "w": "Escalas", "d": 2 }, { "w": "Calentamiento", "d": 2 }, { "w": "Jefe de Sección", "d": 2 }, { "w": "Maderas", "d": 2 },
+        { "w": "Metales", "d": 2 }, { "w": "Percusión", "d": 2 }, { "w": "Línea de Tambores", "d": 2 }, { "w": "Concurso de Bandas", "d": 2 },
+        { "w": "Temporada", "d": 2 }, { "w": "Estandarte", "d": 2 }, { "w": "Clarín", "d": 2 }, { "w": "Bastón de Mando", "d": 2 },
+        { "w": "Kepí", "d": 2 }, { "w": "Abanderado", "d": 2 }, { "w": "Uniforme de Gala", "d": 2 },
+        { "w": "DCI", "d": 3 }, { "w": "WGI", "d": 3 }, { "w": "Winter Guard", "d": 3 }, { "w": "Ensamble de Percusión", "d": 3 },
+        { "w": "Rudimentos", "d": 3 }, { "w": "Paradiddle", "d": 3 }, { "w": "Flam", "d": 3 }, { "w": "Embocadura", "d": 3 },
+        { "w": "Boquilla", "d": 3 }, { "w": "Caña", "d": 3 }, { "w": "Abrazadera", "d": 3 }, { "w": "Aceite para Pistones", "d": 3 },
+        { "w": "Cornetín", "d": 3 }, { "w": "Toque de Bandera", "d": 3 }, { "w": "Toque de Silencio", "d": 3 }, { "w": "Diana", "d": 3 },
+        { "w": "Marcha Dragona", "d": 3 }, { "w": "Marcha Zacatecas", "d": 3 }, { "w": "Lanzamiento de Sable", "d": 3 }, { "w": "Molinillo", "d": 3 },
+        { "w": "Chassé", "d": 3 }, { "w": "Jazz Run", "d": 3 }, { "w": "Sedas", "d": 3 }, { "w": "Guanteletes", "d": 3 },
+        { "w": "Contratiempo", "d": 3 }, { "w": "Subdividir", "d": 3 }, { "w": "Seis Octavos", "d": 3 }, { "w": "Solfeo", "d": 3 },
+        { "w": "Giro de Rifle", "d": 3 }, { "w": "Banda Sinfónica", "d": 3 }, { "w": "Orden Cerrado", "d": 3 }
+      ]
+    },
+    {
+      "id": "disney", "name": "Disney", "emoji": "🏰",
+      "words": [
+        { "w": "Mickey Mouse", "d": 1 }, { "w": "Minnie", "d": 1 }, { "w": "Pato Donald", "d": 1 }, { "w": "Tribilín", "d": 1 },
+        { "w": "Pluto", "d": 1 }, { "w": "Elsa", "d": 1 }, { "w": "Olaf", "d": 1 }, { "w": "Simba", "d": 1 },
+        { "w": "Buzz Lightyear", "d": 1 }, { "w": "Woody", "d": 1 }, { "w": "Nemo", "d": 1 }, { "w": "El Genio", "d": 1 },
+        { "w": "Ariel", "d": 1 }, { "w": "Blancanieves", "d": 1 }, { "w": "Peter Pan", "d": 1 }, { "w": "Campanita", "d": 1 },
+        { "w": "Winnie Pooh", "d": 1 }, { "w": "Tigger", "d": 1 }, { "w": "Dumbo", "d": 1 }, { "w": "Bambi", "d": 1 },
+        { "w": "Pinocho", "d": 1 }, { "w": "Mulán", "d": 1 }, { "w": "Pocahontas", "d": 1 }, { "w": "Stitch", "d": 1 },
+        { "w": "Rapunzel", "d": 1 }, { "w": "Bella", "d": 1 }, { "w": "La Bestia", "d": 1 }, { "w": "Capitán Garfio", "d": 1 },
+        { "w": "Cruella de Vil", "d": 1 }, { "w": "Maléfica", "d": 1 }, { "w": "Walt Disney", "d": 1 },
+        { "w": "Space Mountain", "d": 2 }, { "w": "Piratas del Caribe", "d": 2 }, { "w": "La Mansión Embrujada", "d": 2 }, { "w": "It's a Small World", "d": 2 },
+        { "w": "Jungle Cruise", "d": 2 }, { "w": "Matterhorn", "d": 2 }, { "w": "Las Tazas Giratorias", "d": 2 }, { "w": "Orejas de Mickey", "d": 2 },
+        { "w": "Dole Whip", "d": 2 }, { "w": "Rayo McQueen", "d": 2 }, { "w": "Scar", "d": 2 }, { "w": "Mufasa", "d": 2 },
+        { "w": "Timón", "d": 2 }, { "w": "Pumba", "d": 2 }, { "w": "Sebastián", "d": 2 }, { "w": "Úrsula", "d": 2 },
+        { "w": "Jafar", "d": 2 }, { "w": "Abú", "d": 2 }, { "w": "Pepe Grillo", "d": 2 }, { "w": "El Hada Madrina", "d": 2 },
+        { "w": "Príncipe Azul", "d": 2 }, { "w": "Los Siete Enanos", "d": 2 }, { "w": "Gruñón", "d": 2 }, { "w": "Hakuna Matata", "d": 2 },
+        { "w": "Libre Soy", "d": 2 }, { "w": "Anna", "d": 2 }, { "w": "Kristoff", "d": 2 }, { "w": "Sven", "d": 2 },
+        { "w": "Mirabel", "d": 2 }, { "w": "Bruno", "d": 2 }, { "w": "Remy", "d": 2 },
+        { "w": "Rise of the Resistance", "d": 3 }, { "w": "Indiana Jones Adventure", "d": 3 }, { "w": "Big Thunder Mountain", "d": 3 }, { "w": "Splash Mountain", "d": 3 },
+        { "w": "Soarin'", "d": 3 }, { "w": "Tower of Terror", "d": 3 }, { "w": "Incredicoaster", "d": 3 }, { "w": "Autopia", "d": 3 },
+        { "w": "Casey Jr.", "d": 3 }, { "w": "Mr. Toad", "d": 3 }, { "w": "Peter Pan's Flight", "d": 3 }, { "w": "Tiki Room", "d": 3 },
+        { "w": "Tom Sawyer Island", "d": 3 }, { "w": "Blue Bayou", "d": 3 }, { "w": "Club 33", "d": 3 }, { "w": "Mickey Oculto", "d": 3 },
+        { "w": "Galaxy's Edge", "d": 3 }, { "w": "Oswald", "d": 3 }, { "w": "Chernabog", "d": 3 }, { "w": "Yzma", "d": 3 },
+        { "w": "Kuzco", "d": 3 }, { "w": "Kronk", "d": 3 }, { "w": "Las Locuras del Emperador", "d": 3 }, { "w": "El Caldero Negro", "d": 3 },
+        { "w": "El Planeta del Tesoro", "d": 3 }, { "w": "Bernardo y Bianca", "d": 3 }, { "w": "Los Aristogatos", "d": 3 }, { "w": "La Espada en la Piedra", "d": 3 },
+        { "w": "Merlín", "d": 3 }, { "w": "Fantasía", "d": 3 }, { "w": "El Jorobado de Notre Dame", "d": 3 }
+      ]
     }
   ]
 }

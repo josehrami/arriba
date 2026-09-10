@@ -1,5 +1,5 @@
 import { buildQueue, Round } from './engine.js';
-import { TiltDetector, requestTiltPermission } from './tilt.js';
+import { TiltDetector, requestTiltPermission, SENSITIVITY } from './tilt.js';
 import * as audio from './audio.js';
 import { load, save } from './storage.js';
 import { t, setLang, getLang, initLang, applyI18n } from './i18n.js';
@@ -18,6 +18,10 @@ const state = {
   tiltOk: false,
   wakeLock: null,
 };
+
+// Settings saved before these options existed lack the tilt keys.
+if (!(state.settings.tiltCorrect in SENSITIVITY)) state.settings.tiltCorrect = 'medium';
+if (!(state.settings.tiltPass in SENSITIVITY)) state.settings.tiltPass = 'low';
 
 const roundCtl = { onOrient: null, timer: null, endAt: 0, feedbackUntil: 0, detector: null, lastTick: -1 };
 
@@ -129,6 +133,10 @@ function renderSetup() {
     b.classList.toggle('active', Number(b.dataset.d) === state.settings.difficulty));
   $$('#length-seg button').forEach((b) =>
     b.classList.toggle('active', Number(b.dataset.s) === state.settings.roundLength));
+  $$('#sens-correct-seg button').forEach((b) =>
+    b.classList.toggle('active', b.dataset.v === state.settings.tiltCorrect));
+  $$('#sens-pass-seg button').forEach((b) =>
+    b.classList.toggle('active', b.dataset.v === state.settings.tiltPass));
 }
 
 function bindSetup() {
@@ -139,6 +147,16 @@ function bindSetup() {
   }));
   $$('#length-seg button').forEach((b) => b.addEventListener('click', () => {
     state.settings.roundLength = Number(b.dataset.s);
+    persist();
+    renderSetup();
+  }));
+  $$('#sens-correct-seg button').forEach((b) => b.addEventListener('click', () => {
+    state.settings.tiltCorrect = b.dataset.v;
+    persist();
+    renderSetup();
+  }));
+  $$('#sens-pass-seg button').forEach((b) => b.addEventListener('click', () => {
+    state.settings.tiltPass = b.dataset.v;
     persist();
     renderSetup();
   }));
@@ -190,7 +208,10 @@ function startCountdown() {
 // ---------- round ----------
 function startRound() {
   state.round = new Round(buildQueue(deck(), state.settings.categories, state.settings.difficulty, state.used));
-  roundCtl.detector = new TiltDetector();
+  roundCtl.detector = new TiltDetector({
+    fireDownAt: SENSITIVITY[state.settings.tiltCorrect],
+    fireUpAt: SENSITIVITY[state.settings.tiltPass],
+  });
   roundCtl.feedbackUntil = 0;
   roundCtl.lastTick = -1;
   show('round');

@@ -8,11 +8,19 @@ export function faceDown(beta, gamma) {
   return -Math.cos(beta * DEG) * Math.cos(gamma * DEG);
 }
 
+// Trigger thresholds by sensitivity level: high fires on a slight tilt,
+// low demands a deliberate one. Values are |gz| a tilt must exceed.
+export const SENSITIVITY = { high: 0.45, medium: 0.55, low: 0.75 };
+
 // Neutral-zone state machine: one nod = one word. After firing, the phone
 // must return to the neutral band (|gz| < neutralAt) before it can fire again.
+// Thresholds are per-direction: PASS defaults stricter than CORRECT because
+// players naturally drift the phone upward while thinking.
 export class TiltDetector {
-  constructor({ fireAt = 0.55, neutralAt = 0.3, minIntervalMs = 350 } = {}) {
-    this.fireAt = fireAt;
+  constructor({ fireDownAt = SENSITIVITY.medium, fireUpAt = SENSITIVITY.low,
+                neutralAt = 0.3, minIntervalMs = 350 } = {}) {
+    this.fireDownAt = fireDownAt;
+    this.fireUpAt = fireUpAt;
     this.neutralAt = neutralAt;
     this.minIntervalMs = minIntervalMs;
     this.armed = true;
@@ -25,8 +33,8 @@ export class TiltDetector {
       return null;
     }
     if (now - this.lastFire < this.minIntervalMs) return null;
-    if (gz > this.fireAt) return this._fire('correct', now);
-    if (gz < -this.fireAt) return this._fire('pass', now);
+    if (gz > this.fireDownAt) return this._fire('correct', now);
+    if (gz < -this.fireUpAt) return this._fire('pass', now);
     return null;
   }
   _fire(kind, now) {

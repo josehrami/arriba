@@ -231,6 +231,64 @@
         { "w": "Hallelujah", "d": 3 }, { "w": "La Bamba", "d": 3 }, { "w": "Despacito", "d": 3 }, { "w": "Gangnam Style", "d": 3 },
         { "w": "Macarena", "d": 3 }, { "w": "The Nutcracker", "d": 3 }, { "w": "Für Elise", "d": 3 }
       ]
+    },
+    {
+      "id": "band", "name": "Band & Color Guard", "emoji": "🥁",
+      "words": [
+        { "w": "Marching Band", "d": 1 }, { "w": "Drum Major", "d": 1 }, { "w": "Color Guard", "d": 1 }, { "w": "Flag", "d": 1 },
+        { "w": "Rifle", "d": 1 }, { "w": "Uniform", "d": 1 }, { "w": "Halftime Show", "d": 1 }, { "w": "Parade", "d": 1 },
+        { "w": "Football Field", "d": 1 }, { "w": "Whistle", "d": 1 }, { "w": "Tuba", "d": 1 }, { "w": "Trombone", "d": 1 },
+        { "w": "Snare Drum", "d": 1 }, { "w": "Bass Drum", "d": 1 }, { "w": "Cymbals", "d": 1 }, { "w": "Drumline", "d": 1 },
+        { "w": "Drumsticks", "d": 1 }, { "w": "Band Camp", "d": 1 }, { "w": "Band Director", "d": 1 }, { "w": "Practice", "d": 1 },
+        { "w": "Sheet Music", "d": 1 }, { "w": "Music Stand", "d": 1 }, { "w": "Trophy", "d": 1 }, { "w": "Bus Ride", "d": 1 },
+        { "w": "Plume", "d": 1 }, { "w": "Gloves", "d": 1 }, { "w": "Water Jug", "d": 1 }, { "w": "Stadium", "d": 1 },
+        { "w": "Scoreboard", "d": 1 }, { "w": "Pep Band", "d": 1 }, { "w": "Fight Song", "d": 1 },
+        { "w": "Sousaphone", "d": 2 }, { "w": "Mellophone", "d": 2 }, { "w": "Baritone", "d": 2 }, { "w": "Piccolo", "d": 2 },
+        { "w": "Tenor Drums", "d": 2 }, { "w": "Front Ensemble", "d": 2 }, { "w": "Vibraphone", "d": 2 }, { "w": "Glockenspiel", "d": 2 },
+        { "w": "Saber", "d": 2 }, { "w": "Flag Toss", "d": 2 }, { "w": "Drill", "d": 2 }, { "w": "Dot Book", "d": 2 },
+        { "w": "Yard Line", "d": 2 }, { "w": "Formation", "d": 2 }, { "w": "High Step", "d": 2 }, { "w": "Roll Step", "d": 2 },
+        { "w": "Attention", "d": 2 }, { "w": "Parade Rest", "d": 2 }, { "w": "Horns Up", "d": 2 }, { "w": "Warm-up", "d": 2 },
+        { "w": "Tuning", "d": 2 }, { "w": "Scales", "d": 2 }, { "w": "Section Leader", "d": 2 }, { "w": "Woodwinds", "d": 2 },
+        { "w": "Brass Section", "d": 2 }, { "w": "Percussion", "d": 2 }, { "w": "Field Show", "d": 2 }, { "w": "Band Competition", "d": 2 },
+        { "w": "Finals", "d": 2 }, { "w": "Uniform Inspection", "d": 2 }, { "w": "Shako", "d": 2 },
+        { "w": "DCI", "d": 3 }, { "w": "WGI", "d": 3 }, { "w": "Winter Guard", "d": 3 }, { "w": "Indoor Percussion", "d": 3 },
+        { "w": "Battery", "d": 3 }, { "w": "Hash Marks", "d": 3 }, { "w": "Drill Chart", "d": 3 }, { "w": "Backfield", "d": 3 },
+        { "w": "Box Five", "d": 3 }, { "w": "Subdivide", "d": 3 }, { "w": "Rudiments", "d": 3 }, { "w": "Paradiddle", "d": 3 },
+        { "w": "Flam", "d": 3 }, { "w": "Embouchure", "d": 3 }, { "w": "Ligature", "d": 3 }, { "w": "Reed", "d": 3 },
+        { "w": "Valve Oil", "d": 3 }, { "w": "Slide Grease", "d": 3 }, { "w": "Mouthpiece", "d": 3 }, { "w": "Contra", "d": 3 },
+        { "w": "Bugle", "d": 3 }, { "w": "Silks", "d": 3 }, { "w": "Saber Toss", "d": 3 }, { "w": "Body Work", "d": 3 },
+        { "w": "Jazz Run", "d": 3 }, { "w": "Chassé", "d": 3 }, { "w": "Drop Spin", "d": 3 }, { "w": "Peggy Spin", "d": 3 },
+        { "w": "Pinwheel", "d": 3 }, { "w": "Gauntlets", "d": 3 }, { "w": "Aussie Hat", "d": 3 }
+      ]
+    },
+    {
+      "id": "disney", "name": "Disney", "emoji": "🏰",
+      "words": [
+        { "w": "Mickey Mouse", "d": 1 }, { "w": "Minnie Mouse", "d": 1 }, { "w": "Donald Duck", "d": 1 }, { "w": "Goofy", "d": 1 },
+        { "w": "Pluto", "d": 1 }, { "w": "Elsa", "d": 1 }, { "w": "Olaf", "d": 1 }, { "w": "Simba", "d": 1 },
+        { "w": "Buzz Lightyear", "d": 1 }, { "w": "Woody", "d": 1 }, { "w": "Nemo", "d": 1 }, { "w": "Genie", "d": 1 },
+        { "w": "Ariel", "d": 1 }, { "w": "Snow White", "d": 1 }, { "w": "Peter Pan", "d": 1 }, { "w": "Tinker Bell", "d": 1 },
+        { "w": "Winnie the Pooh", "d": 1 }, { "w": "Tigger", "d": 1 }, { "w": "Dumbo", "d": 1 }, { "w": "Bambi", "d": 1 },
+        { "w": "Pinocchio", "d": 1 }, { "w": "Mulan", "d": 1 }, { "w": "Pocahontas", "d": 1 }, { "w": "Stitch", "d": 1 },
+        { "w": "Rapunzel", "d": 1 }, { "w": "Belle", "d": 1 }, { "w": "The Beast", "d": 1 }, { "w": "Captain Hook", "d": 1 },
+        { "w": "Cruella de Vil", "d": 1 }, { "w": "Maleficent", "d": 1 }, { "w": "Walt Disney", "d": 1 },
+        { "w": "Space Mountain", "d": 2 }, { "w": "Splash Mountain", "d": 2 }, { "w": "Pirates of the Caribbean", "d": 2 }, { "w": "Haunted Mansion", "d": 2 },
+        { "w": "It's a Small World", "d": 2 }, { "w": "Matterhorn", "d": 2 }, { "w": "Jungle Cruise", "d": 2 }, { "w": "Spinning Teacups", "d": 2 },
+        { "w": "Main Street USA", "d": 2 }, { "w": "Mickey Ears", "d": 2 }, { "w": "Dole Whip", "d": 2 }, { "w": "Fastpass", "d": 2 },
+        { "w": "Scar", "d": 2 }, { "w": "Mufasa", "d": 2 }, { "w": "Timon", "d": 2 }, { "w": "Pumbaa", "d": 2 },
+        { "w": "Sebastian", "d": 2 }, { "w": "Ursula", "d": 2 }, { "w": "Jafar", "d": 2 }, { "w": "Abu", "d": 2 },
+        { "w": "Jiminy Cricket", "d": 2 }, { "w": "Fairy Godmother", "d": 2 }, { "w": "Prince Charming", "d": 2 }, { "w": "Seven Dwarfs", "d": 2 },
+        { "w": "Grumpy", "d": 2 }, { "w": "Hakuna Matata", "d": 2 }, { "w": "Let It Go", "d": 2 }, { "w": "Anna", "d": 2 },
+        { "w": "Kristoff", "d": 2 }, { "w": "Sven", "d": 2 }, { "w": "Mirabel", "d": 2 },
+        { "w": "Rise of the Resistance", "d": 3 }, { "w": "Indiana Jones Adventure", "d": 3 }, { "w": "Big Thunder Mountain", "d": 3 }, { "w": "Radiator Springs Racers", "d": 3 },
+        { "w": "Soarin'", "d": 3 }, { "w": "Tower of Terror", "d": 3 }, { "w": "Incredicoaster", "d": 3 }, { "w": "Grizzly River Run", "d": 3 },
+        { "w": "Autopia", "d": 3 }, { "w": "Astro Orbitor", "d": 3 }, { "w": "Casey Jr. Train", "d": 3 }, { "w": "Storybook Land", "d": 3 },
+        { "w": "Mr. Toad's Wild Ride", "d": 3 }, { "w": "Peter Pan's Flight", "d": 3 }, { "w": "Roger Rabbit's Car Toon Spin", "d": 3 }, { "w": "Enchanted Tiki Room", "d": 3 },
+        { "w": "Tom Sawyer Island", "d": 3 }, { "w": "Mark Twain Riverboat", "d": 3 }, { "w": "Blue Bayou", "d": 3 }, { "w": "Club 33", "d": 3 },
+        { "w": "Hidden Mickey", "d": 3 }, { "w": "Figment", "d": 3 }, { "w": "Oswald", "d": 3 }, { "w": "Chernabog", "d": 3 },
+        { "w": "Yzma", "d": 3 }, { "w": "Kuzco", "d": 3 }, { "w": "Dr. Facilier", "d": 3 }, { "w": "Treasure Planet", "d": 3 },
+        { "w": "The Black Cauldron", "d": 3 }, { "w": "Flik", "d": 3 }, { "w": "Galaxy's Edge", "d": 3 }
+      ]
     }
   ]
 }
