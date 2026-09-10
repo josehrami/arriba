@@ -7,7 +7,7 @@
 import { filterWords, shuffle, buildQueue, Round } from '../js/engine.js';
 import { faceDown, TiltDetector, SENSITIVITY } from '../js/tilt.js';
 import { STRINGS } from '../js/i18n.js';
-import { load, save } from '../js/storage.js';
+import { load, save, versionFromCacheNames } from '../js/storage.js';
 
 const results = [];
 function test(name, fn) {
@@ -129,6 +129,12 @@ test('TiltDetector: SENSITIVITY presets configure each direction', () => {
 
 test('i18n: en and es have identical key sets', () => {
   eq(Object.keys(STRINGS.en).sort(), Object.keys(STRINGS.es).sort());
+});
+test('storage: versionFromCacheNames picks the newest app cache', () => {
+  eq(versionFromCacheNames(['arriba-v3']), 'v3');
+  eq(versionFromCacheNames(['arriba-v2', 'arriba-v10']), 'v10');
+  eq(versionFromCacheNames(['unrelated']), null);
+  eq(versionFromCacheNames([]), null);
 });
 test('storage: round-trips JSON and falls back on garbage', () => {
   save('__test', { a: 1 });

@@ -1,5 +1,5 @@
 // Bump the version to ship updates: a new cache is installed, old ones purged.
-const CACHE = 'arriba-v2';
+const CACHE = 'arriba-v3';
 
 const ASSETS = [
   './',
@@ -21,8 +21,12 @@ const ASSETS = [
 ];
 
 self.addEventListener('install', (e) => {
+  // cache: 'no-cache' forces revalidation so a version bump never precaches
+  // HTTP-stale copies of the assets it ships.
   e.waitUntil(
-    caches.open(CACHE).then((c) => c.addAll(ASSETS)).then(() => self.skipWaiting())
+    caches.open(CACHE)
+      .then((c) => c.addAll(ASSETS.map((u) => new Request(u, { cache: 'no-cache' }))))
+      .then(() => self.skipWaiting())
   );
 });
 

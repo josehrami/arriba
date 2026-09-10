@@ -1,7 +1,7 @@
 import { buildQueue, Round } from './engine.js';
 import { TiltDetector, requestTiltPermission, SENSITIVITY } from './tilt.js';
 import * as audio from './audio.js';
-import { load, save } from './storage.js';
+import { load, save, versionFromCacheNames } from './storage.js';
 import { t, setLang, getLang, initLang, applyI18n } from './i18n.js';
 
 const $ = (s) => document.querySelector(s);
@@ -366,6 +366,10 @@ async function boot() {
   bindHome(); bindPlayers(); bindSetup(); bindHandoff(); bindRound(); bindRecap(); bindScores();
   renderHome();
   show('home');
+  try {
+    const v = versionFromCacheNames(await caches.keys());
+    if (v) $('#version-tag').textContent = v;
+  } catch {}
   document.addEventListener('visibilitychange', () => {
     if (document.visibilityState === 'visible' && roundCtl.timer) acquireWakeLock();
   });
